@@ -7,15 +7,28 @@ package utils;
 
 import vista.VistaMensaje;
 
-/**
- *
- * @author Alexgallo91
- */
 public class Utils {
-    
+
     public static VistaMensaje mensaje = new VistaMensaje();
     public static double dineroUsuario = 1000.00;
-    
-    
-    
+
+    public static String obtenerSaldoTextoUsuario() {
+        return String.format("$%.2f", Utils.dineroUsuario);
+    }
+
+    public static boolean esDouble(String numero) {
+        boolean esDouble = true;
+
+        try {
+            Double.parseDouble(numero);
+        } catch (NumberFormatException e) {
+            esDouble = false;
+        }
+
+        return esDouble;
+    }
+
+    public static double obtenerCantidadDouble(String numero){
+        return Double.parseDouble(numero);
+    }
 }

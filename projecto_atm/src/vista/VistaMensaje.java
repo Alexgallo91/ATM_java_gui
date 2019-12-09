@@ -5,10 +5,6 @@
  */
 package vista;
 
-/**
- *
- * @author Alexgallo91
- */
 public class VistaMensaje extends javax.swing.JFrame {
 
     /**

@@ -7,10 +7,6 @@ package principal;
 
 import controlador.ControladorPantallaPrincipal;
 
-/**
- *
- * @author Alexgallo91
- */
 public class Principal {
     
     

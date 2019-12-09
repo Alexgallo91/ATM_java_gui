@@ -8,24 +8,25 @@ package vista;
 import java.awt.event.ActionListener;
 import utils.Utils;
 
-
-public class VistaAtm extends javax.swing.JFrame {
+public class VistaRetiroDinero extends javax.swing.JFrame {
 
     /**
      * Creates new form VistaPantallaPrincipal
      */
-    public VistaAtm() {
+    public VistaRetiroDinero() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.campoMuestreoSaldo.setText(Double.toString(Utils.dineroUsuario));
+              
     }
     
     public void agregarListener(ActionListener a){
-        this.btnDeposito.addActionListener(a);
         this.btnRetirar.addActionListener(a);
     }
     
     public void actualizarPantalla(){
-        this.campoSaldo.setText(Double.toString(Utils.dineroUsuario));
+        this.campoMuestreoSaldo.setText(Double.toString(Utils.dineroUsuario));
+        this.campRetiro.setText("");
     }
 
     /**
@@ -39,12 +40,14 @@ public class VistaAtm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        campRetiro = new javax.swing.JTextField();
         btnRetirar = new javax.swing.JButton();
-        btnDeposito = new javax.swing.JButton();
-        campoSaldo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        campoMuestreoSaldo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        campoMuestreoSaldo1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(672, 465));
         setResizable(false);
 
@@ -58,7 +61,12 @@ public class VistaAtm extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("SALDO DISPONIBLE:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 130, 350, 70);
+        jLabel2.setBounds(50, 80, 350, 70);
+
+        campRetiro.setBackground(new java.awt.Color(255, 255, 153));
+        campRetiro.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(campRetiro);
+        campRetiro.setBounds(240, 240, 200, 40);
 
         btnRetirar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRetirar.setText("RETIRAR");
@@ -68,25 +76,29 @@ public class VistaAtm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRetirar);
-        btnRetirar.setBounds(420, 350, 160, 50);
+        btnRetirar.setBounds(250, 290, 160, 50);
 
-        btnDeposito.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnDeposito.setText("DEPOSITAR");
-        btnDeposito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDepositoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDeposito);
-        btnDeposito.setBounds(110, 350, 160, 50);
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("$");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(200, 240, 40, 40);
 
-        campoSaldo.setBackground(new java.awt.Color(0, 0, 0));
-        campoSaldo.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
-        campoSaldo.setForeground(new java.awt.Color(0, 255, 0));
-        campoSaldo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        campoSaldo.setOpaque(true);
-        jPanel1.add(campoSaldo);
-        campoSaldo.setBounds(360, 150, 180, 30);
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("INGRESA EL MONTO A RETIRAR: ");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(110, 180, 460, 70);
+
+        campoMuestreoSaldo.setBackground(new java.awt.Color(0, 0, 0));
+        campoMuestreoSaldo.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        campoMuestreoSaldo.setForeground(new java.awt.Color(0, 255, 0));
+        campoMuestreoSaldo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        campoMuestreoSaldo.setOpaque(true);
+        jPanel1.add(campoMuestreoSaldo);
+        campoMuestreoSaldo.setBounds(360, 100, 180, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/wallpaper_atm.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(672, 465));
@@ -94,6 +106,14 @@ public class VistaAtm extends javax.swing.JFrame {
         jLabel1.setPreferredSize(new java.awt.Dimension(672, 465));
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 680, 470);
+
+        campoMuestreoSaldo1.setBackground(new java.awt.Color(0, 0, 0));
+        campoMuestreoSaldo1.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
+        campoMuestreoSaldo1.setForeground(new java.awt.Color(0, 255, 0));
+        campoMuestreoSaldo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        campoMuestreoSaldo1.setOpaque(true);
+        jPanel1.add(campoMuestreoSaldo1);
+        campoMuestreoSaldo1.setBounds(360, 100, 180, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,10 +128,6 @@ public class VistaAtm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDepositoActionPerformed
 
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
         // TODO add your handling code here:
@@ -134,31 +150,64 @@ public class VistaAtm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaAtm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaRetiroDinero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaAtm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaRetiroDinero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaAtm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaRetiroDinero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaAtm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaRetiroDinero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaAtm().setVisible(true);
+                new VistaRetiroDinero().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnDeposito;
     public javax.swing.JButton btnRetirar;
-    public javax.swing.JLabel campoSaldo;
+    public javax.swing.JTextField campRetiro;
+    private javax.swing.JLabel campoMuestreoSaldo;
+    private javax.swing.JLabel campoMuestreoSaldo1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

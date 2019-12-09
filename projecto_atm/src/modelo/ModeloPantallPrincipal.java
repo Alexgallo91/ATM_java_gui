@@ -5,10 +5,6 @@
  */
 package modelo;
 
-/**
- *
- * @author Alexgallo91
- */
 public class ModeloPantallPrincipal {
     
     public boolean verificarPassword(String pass){

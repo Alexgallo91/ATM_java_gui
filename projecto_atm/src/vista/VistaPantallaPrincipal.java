@@ -7,10 +7,6 @@ package vista;
 
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author Alexgallo91
- */
 public class VistaPantallaPrincipal extends javax.swing.JFrame {
 
     /**
